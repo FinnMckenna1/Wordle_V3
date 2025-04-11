@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91a3d8c0-16ee-4e03-a5da-064c7ca31117" name="Changes" comment="" />
+    <list default="true" id="91a3d8c0-16ee-4e03-a5da-064c7ca31117" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Worddle_attempt.py" beforeDir="false" afterPath="$PROJECT_DIR$/Worddle_attempt.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

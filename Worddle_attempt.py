@@ -53,3 +53,6 @@ for attempt in range(attempts):
     print("Result:", score)
 else:
     print(f"Out of attempts! The word was: {target}")
+
+
+print("NEW COMMIT")
