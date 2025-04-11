@@ -35,7 +35,7 @@ print("RULES: \n"
 	  "3. This is the third rule. \n"
 	  "5. Have Fun.")
 print("--------------------------------------")
-print(f"CHEAT WORD IS: {target}")
+print(f"CHEAT: {target}")
 for attempt in range(attempts):
     guess = input(f"Attempts {attempt + 1}/{attempts}: ").lower()
 
