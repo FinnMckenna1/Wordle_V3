@@ -1,32 +1,67 @@
 import random
+# Load target words from file
 with open("target_words.txt", "r") as files:
 	target_words = [line.strip() for line in files]
+# Randomly select one word as the target word
 target = random.choice(target_words)
 
+# Load all valid guessable words from file
 with open("all_words.txt", "r") as f:
-	all_words_list = [line.strip() for line in f]
-
+    all_words_list = [line.strip() for line in f]
+# #
+# --------------------------------------------------------------------------------
+# def score_guess(target, guess):
+#
+#     """
+#         Compares the guessed word with the target word and returns a score string.
+#
+#         Scoring:
+#         - '2' for correct letter in the correct position
+#         - '1' for correct letter in the wrong position
+#         - '0' for incorrect letter
+#
+#         Parameters:
+#         target: The target word to guess.
+#         guess: The player's guessed word.
+#
+#         Returns:
+#         str: A string of digits representing the score for each letter.
+#         """
+#
+#
+#
+    # score = ["0"] * len(target)
+    # target_used = [False] * len(target)
+    # # First pass: check for correct letters in correct positions
+    # for i in range(len(target)):
+    #     if guess[i] == target[i]:
+    #         score[i] = "2"
+    #         target_used[i] = True
+    #
+    # # Second pass: check for correct letters in wrong positions
+    # for i in range(len(target)):
+    #     if score[i] == "0":
+    #         for j in range(len(target)):
+    #             if not target_used[j] and guess[i] == target[j]:
+    #                 score[i] = "1"
+    #                 target_used[j] = True
+    #                 break
+#
+#     return "".join(score)
+# -------------------------------------------------------------------------
 def score_guess(target, guess):
     score = ["0"] * len(target)
-    target_used = [False] * len(target)
 
     for i in range(len(target)):
         if guess[i] == target[i]:
             score[i] = "2"
-            target_used[i] = True
-
-    for i in range(len(target)):
-        if score[i] == "0":
-            for j in range(len(target)):
-                if not target_used[j] and guess[i] == target[j]:
-                    score[i] = "1"
-                    target_used[j] = True
-                    break
-
+        elif guess[i] in target:
+            score[i] = "1"
     return "".join(score)
 
-attempts = 5
+# Set number of attempts
 
+# Game intro and rules
 print("--------------------------------------")
 print("*******  WELCOME TO WORDLE  **********")
 print("RULES: \n"
@@ -36,9 +71,13 @@ print("RULES: \n"
 	  "5. Have Fun.")
 print("--------------------------------------")
 print(f"CHEAT: {target}")
+
+# Main game loop
 for attempt in range(attempts):
     guess = input(f"Attempts {attempt + 1}/{attempts}: ").lower()
-
+    if attempt = 5:
+        print("out of attempts")
+        break
     if len(guess) != len(target):
         print(f"Word must be {len(target)} letters long.")
         continue
@@ -48,11 +87,7 @@ for attempt in range(attempts):
     elif guess == target:
         print("Congrats! You guessed the word!")
         break
-
     score = score_guess(target, guess)
     print("Result:", score)
 else:
     print(f"Out of attempts! The word was: {target}")
-
-
-print("NEW COMMIT")
