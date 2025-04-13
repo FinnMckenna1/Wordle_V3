@@ -59,6 +59,7 @@ def score_guess(target, guess):
             score[i] = "1"
     return "".join(score)
 
+attempts = 5
 # Set number of attempts
 
 # Game intro and rules
@@ -73,11 +74,10 @@ print("--------------------------------------")
 print(f"CHEAT: {target}")
 
 # Main game loop
+print(f"CHEAT WORD IS: {target}")
 for attempt in range(attempts):
     guess = input(f"Attempts {attempt + 1}/{attempts}: ").lower()
-    if attempt = 5:
-        print("out of attempts")
-        break
+
     if len(guess) != len(target):
         print(f"Word must be {len(target)} letters long.")
         continue
@@ -87,7 +87,9 @@ for attempt in range(attempts):
     elif guess == target:
         print("Congrats! You guessed the word!")
         break
+
     score = score_guess(target, guess)
     print("Result:", score)
 else:
     print(f"Out of attempts! The word was: {target}")
+
